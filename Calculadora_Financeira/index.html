@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Logo -->
+    <div class="container">
+        <div class="circulo">
+            <div class="logo">
+                <img class="logo2" src="img/logo.png" alt="some text" >
+            </div>
+        </div>
+        <!-- Logo -->
+
+        <div id="calculadora">
+            <ul>
+                <li class="liLogo">
+                    <img class="logo1" src="img/logo.png" alt="some text">
+                </li>
+                <li class="liLogo">
+                    <span class="fntTitulo">Calculadora</span>
+                </li>
+                <li class="liLogo">
+                    <span class="fntTitulo">Financeira</span>
+                </li>
+            </ul>
+
+            <!-- Inputs -->
+            <div class="cont">
+                <div class="continput">
+                    <ul>
+                        <li class="liInput">
+                            <span class="fntTexto1">Tipo do sorvete</span>
+                        </li>
+                        <li class="liInput">
+                            <input id="input_tipo" class="inputTipo" type="text">
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="continput">
+
+                    <ul>
+                        <li class="liInput">
+                            <span class="fntTexto1">Producao por mês</span>
+                        </li>
+                        <li class="liInput">
+                            <input id="input_producao" type="number" placeholder="Unidade">
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="liInput">
+                            <span class="fntTexto1">Desperdicio por mês</span>
+                        </li>
+                        <li class="liInput">
+                            <input id="input_desperdicio" type="number" placeholder="Unidade">
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="continput">
+                    <ul>
+                        <li class="liInput">
+                            <span class="fntTexto1">Valor de fabricação</span>
+                        </li>
+                        <li class="liInput">
+                            <input id="input_valor_fabricacao"  type="number" placeholder="R$">
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="liInput">
+                            <span class="fntTexto1">Valor de venda</span>
+                        </li>
+                        <li class="liInput">
+                            <input  id="input_valor_venda" type="number" placeholder="R$">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Inputs -->
+
+            <!-- Botao -->
+            <div class="botao1">
+                <button onclick="calcular()">Calcular</button>
+            </div>
+        </div>
+        <!-- Botao -->
+
+</body>
+</html>
+
+<script>
+
+    var reset = calculadora.innerHTML;
+
+    function calcular(){
+        var tipo = input_tipo.value;
+        var producao = Number(input_producao.value);
+        var desperdicio = Number(input_desperdicio.value);
+        var valor_fabricacao = Number(input_valor_fabricacao.value);
+        var valor_venda = Number(input_valor_venda.value);
+
+        var perda_porcento = desperdicio*100/producao;
+        var lucro_porcento = (valor_venda/valor_fabricacao)*100-100;
+        var gasto_producao = producao * valor_fabricacao;
+        var lucro_sem_desperdicio = producao* valor_venda;
+        var total_despercidio = producao-desperdicio;
+        var lucro_com_desperdicio = lucro_sem_desperdicio-desperdicio*valor_venda;
+        var deixa_ganhar_mes = lucro_sem_desperdicio-total_despercidio*valor_venda; 
+        var deixa_ganhar_ano  = deixa_ganhar_mes*12;
+        
+        
+        
+        calculadora.innerHTML = 
+        `<span class= "fntTexto1 espaco">Com base nos valores registros:</span> <br>
+        <hr>
+        <span class= "fntTexto2 espaco">Sua empresa lucra ${lucro_porcento.toFixed(0)}% em cima do seu produto.</span> <br>
+        <span class= "fntTexto2 espaco">Ela gasta ${gasto_producao.toLocaleString("pt-BR", { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' })} em produção do ${tipo}.</span> <br>
+        <span class= "fntTexto2 espaco">De ${producao} sorvertes, ${desperdicio} são jogados fora.</span> <br>
+        <span class= "fntTexto2 espaco">Sem desperdício, lucraria: <span class= "verde"> ${lucro_sem_desperdicio.toLocaleString("pt-BR", { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' })}.</span> </span> <br>
+        <span class= "fntTexto2 espaco">Com desperdício lucra apenas: <span class= "amarelo"> ${lucro_com_desperdicio.toLocaleString("pt-BR", { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' })}.</span></span><br>
+        <span class= "fntTexto2 espaco">Reduzindo seu lucro mensal em: <span class= "vermelho"> ${ perda_porcento.toFixed(0)}%. </span> </span> <br>
+        <span class= "fntTexto2 espaco">Deixando de ganhar por mês: <span class= "vermelho"> ${deixa_ganhar_mes.toLocaleString("pt-BR", { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }) }. </span></span><br>
+        <span class= "fntTexto2 espaco">Deixando de ganhar por ano: <span class= "vermelho"> ${(deixa_ganhar_ano).toLocaleString("pt-BR", { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }) }. </span></span><br>
+        <hr>
+        <div class="botao2">
+                <button onclick="novoCalculo()">Novo Calculo</button>
+            </div>
+        </div>`
+} 
+ function novoCalculo(){
+    calculadora.innerHTML = reset; 
+}
+
+</script>

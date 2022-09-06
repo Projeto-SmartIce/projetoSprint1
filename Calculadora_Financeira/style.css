@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Inter';
+}
+
+input {
+    all: unset;
+    width: 15vw;
+    height: 5vh;
+    border-bottom: 0.4vh solid rgba(1, 131, 255, 1);
+}
+
+button{
+    all: unset;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 900;
+    font-size: 3vh;
+    text-align: center;
+    width: 12vw;
+    height: 8vh;
+    margin-top: 5vh;
+    background-color:rgba(1, 131, 255, 1) ; 
+}
+
+.logo1{
+    width: 18%;
+    height: 18%;
+    margin-top: 2vh;
+}
+
+.logo2 {
+    width: 90%;
+    height: 90%;  
+}
+
+.container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(36, 77, 115, 1);
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.circulo{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background-color: rgba(46, 96, 143, 1);
+    border-radius: 100%;
+    height: 170vh;
+    width: 85vw;
+    margin-left: -55vw;
+}
+
+.logo{
+    background-color: rgba(255, 255, 255, 1);
+    height: 30vw;
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#calculadora{
+    background-color: rgba(255, 255, 255, 1);
+    height: 40vw;
+    width: 40vw;
+}
+
+.fntTitulo{
+    font-size: 3.2vh;
+    font-weight: 900;
+    color: rgba(28, 60, 89, 1); 
+}
+
+.fntTexto1 {
+    font-size: 2.5vh;
+    font-weight: 900;
+    color: rgba(1, 131, 255, 1);
+    height: 7vh;
+    display: flex;
+    align-items: flex-end;
+}
+
+.fntTexto2{
+    font-size: 2.5vh;
+    color: rgb(0, 0, 0);
+   margin-top: 1.2vh;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-weight: 700;
+}
+
+.cont{
+    margin-bottom: 2vh;
+    height: 36.8vh;
+    width: 50vw;
+    
+   
+}
+
+.continput{
+    display: flex;
+    justify-content: space-evenly;
+    height: 12vh;
+    width: 40vw;
+   
+}
+
+.liInput {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.liLogo {
+    display: flex;
+    justify-content: center;
+    margin: 1vh;
+}
+
+.inputTipo {
+    width:33.3vw;
+}
+
+.botao2{
+    display: flex;
+    justify-content: center;
+    margin-top: -2vh;
+}
+
+.botao1 {
+    display: flex;
+    justify-content: center;
+}
+
+.espaco{
+    margin-left: 3vh;   
+}
+
+.verde{
+    font-weight: 900;
+    color: rgb(0, 126, 0);
+    
+}
+
+.vermelho {
+    font-weight: 900;
+    color: rgb(146, 3, 3);
+ 
+}
+
+.amarelo{
+    font-weight: 900;
+    color: rgb(216, 50, 0);
+
+}
